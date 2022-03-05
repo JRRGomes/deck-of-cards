@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-x-large)
+}
+
+.container__buttons {
+  margin-top: var(--space-small);
+}
