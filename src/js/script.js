@@ -1,6 +1,6 @@
-const suits = ['H', 'S', 'D', 'C'];
-const cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-var deck = [];
+const SUITS = ['H', 'S', 'D', 'C'];
+const CARDS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+let deck = [];
 
 const heartButton = document.getElementById('heart');
 const spadeButton = document.getElementById('spade');
@@ -10,12 +10,11 @@ const resetButton = document.getElementById('reset');
 const shuffleButton = document.getElementById('shuffle');
 
 function createDeck() {
-  for(let suitsCounter = 0; suitsCounter < 4; suitsCounter++ ){
-    for(let cardCounter = 0; cardCounter < 13; cardCounter++){
-      let card = cards[cardCounter] + suits[suitsCounter]
-      deck.push({ cardValue: `${cards[cardCounter]}`, cardSuit: `${suits[suitsCounter]}` });
-    }    
-  }
+  SUITS.forEach(suit => {
+    CARDS.forEach(card => {
+      deck.push({ cardValue: `${card}`, cardSuit: `${suit}` })
+    })
+  })
 
   return deck;
 }
@@ -37,8 +36,8 @@ const main = document.getElementById('deck');
 main.append(...deckList);
 
 //EVENTS
-var initialDeck = [...deck]
-var currentDeck = [...deck]
+let initialDeck = [...deck]
+let currentDeck = [...deck]
 
 resetButton.addEventListener('click', () => {
   currentDeck = [...initialDeck]
