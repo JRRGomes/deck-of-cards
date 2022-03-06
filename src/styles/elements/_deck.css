@@ -1,0 +1,7 @@
+.deck {
+  border: var(--space-xxx-small) solid var(--dark-grey);
+  text-align: center;
+  font-size: var(--space-small);
+  padding: var(--space-x-small);
+  margin: var(--space-x-small);
+}

@@ -1,0 +1,22 @@
+:root {
+  --main-font: "Montserrat", sans-serif;
+
+  --space-unit: 1em;
+  --space-xxx-small: calc(0.15 * var(--space-unit));
+  --space-xx-small: calc(0.25 * var(--space-unit));
+  --space-x-small: calc(0.5 * var(--space-unit));
+  --space-small: calc(0.75 * var(--space-unit));
+  --space-minor: calc(0.8 * var(--space-unit));
+  --space-medium: calc(1.25 * var(--space-unit));
+  --space-large: calc(2 * var(--space-unit));
+  --space-x-large: calc(3 * var(--space-unit));
+  --space-xx-large: calc(5 * var(--space-unit));
+  --space-xxx-large: calc(13 * var(--space-unit));
+  --space-super-large: calc(20 * var(--space-unit));
+
+  --main-bg: #ecedf3;
+  --main-font-color: #404142;
+  --dark-grey: #333333;
+  --soft-grey: #a7a7a7;
+  --light-grey: #dddddd;
+}
