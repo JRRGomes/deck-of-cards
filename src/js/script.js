@@ -20,6 +20,7 @@ const heartButton = document.getElementById("heart");
 const spadeButton = document.getElementById("spade");
 const diamondButton = document.getElementById("diamond");
 const clubButton = document.getElementById("club");
+const resetButton = document.getElementById("reset");
 
 function createDeck() {
   SUITS.forEach((suit) => {
@@ -79,4 +80,10 @@ clubButton.addEventListener("click", () => {
   });
   const clubCards = filteredDeck.map(createDeckDivs);
   main.replaceChildren(...clubCards);
+});
+
+resetButton.addEventListener("click", () => {
+  currentDeck = [...initialDeck];
+  const resetDeck = currentDeck.map(createDeckDivs);
+  main.replaceChildren(...resetDeck);
 });
