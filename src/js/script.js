@@ -48,38 +48,35 @@ const deckList = deck.map(createDeckDivs);
 const main = document.getElementById("deck");
 main.append(...deckList);
 
+
+function filterSuit(suit){
+  filteredDeck = currentDeck.filter((card) => {
+    return card.cardSuit.includes(suit);
+  })
+  const suitCards = filteredDeck.map(createDeckDivs);
+  return suitCards;
+}
+
 let initialDeck = [...deck];
 let currentDeck = [...deck];
 
 heartButton.addEventListener("click", () => {
-  filteredDeck = currentDeck.filter((card) => {
-    return card.cardSuit.includes("H");
-  });
-  const heartCards = filteredDeck.map(createDeckDivs);
+  heartCards = filterSuit('H');
   main.replaceChildren(...heartCards);
 });
 
 spadeButton.addEventListener("click", () => {
-  filteredDeck = currentDeck.filter((card) => {
-    return card.cardSuit.includes("S");
-  });
-  const spadeCards = filteredDeck.map(createDeckDivs);
+  spadeCards = filterSuit('S');
   main.replaceChildren(...spadeCards);
 });
 
 diamondButton.addEventListener("click", () => {
-  filteredDeck = currentDeck.filter((card) => {
-    return card.cardSuit.includes("D");
-  });
-  const diamondCards = filteredDeck.map(createDeckDivs);
+  diamondCards = filterSuit('D');
   main.replaceChildren(...diamondCards);
 });
 
 clubButton.addEventListener("click", () => {
-  filteredDeck = currentDeck.filter((card) => {
-    return card.cardSuit.includes("C");
-  });
-  const clubCards = filteredDeck.map(createDeckDivs);
+  clubCards = filterSuit('C');
   main.replaceChildren(...clubCards);
 });
 
