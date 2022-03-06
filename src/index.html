@@ -4,11 +4,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">     
   <link rel="stylesheet" href="styles/index.css">
   <title>Deck of Cards</title>
 </head>
 <body>
-  <h1>Deck of Cards</h1>
+  <div class="container">
+    <h1>Deck of Cards</h1>
+    <div id="deck" class="deck-container">
+  </div>
+  <div class="container__buttons">
+    <label for=""></label>
+    <button id="heart" class="button">heart</button>
+    <button id="spade" class="button">spade</button>
+    <button id="diamond" class="button">diamond</button>
+    <button id="club" class="button">club</button>
+  </div>
+  <div class="container__buttons">
+    <button id="reset" class="button">reset</button>
+    <button id="shuffle" class="button">shuffle</button>
+  </div>
 
 </body>
 <script src="js/script.js"></script>
