@@ -16,6 +16,11 @@ const CARDS = [
 ];
 let deck = [];
 
+const heartButton = document.getElementById("heart");
+const spadeButton = document.getElementById("spade");
+const diamondButton = document.getElementById("diamond");
+const clubButton = document.getElementById("club");
+
 function createDeck() {
   SUITS.forEach((suit) => {
     CARDS.forEach((card) => {
@@ -40,3 +45,38 @@ deck = createDeck();
 const deckList = deck.map(createDeckDivs);
 const main = document.getElementById("deck");
 main.append(...deckList);
+
+let initialDeck = [...deck];
+let currentDeck = [...deck];
+
+heartButton.addEventListener("click", () => {
+  filteredDeck = currentDeck.filter((card) => {
+    return card.cardSuit.includes("H");
+  });
+  const heartCards = filteredDeck.map(createDeckDivs);
+  main.replaceChildren(...heartCards);
+});
+
+spadeButton.addEventListener("click", () => {
+  filteredDeck = currentDeck.filter((card) => {
+    return card.cardSuit.includes("S");
+  });
+  const spadeCards = filteredDeck.map(createDeckDivs);
+  main.replaceChildren(...spadeCards);
+});
+
+diamondButton.addEventListener("click", () => {
+  filteredDeck = currentDeck.filter((card) => {
+    return card.cardSuit.includes("D");
+  });
+  const diamondCards = filteredDeck.map(createDeckDivs);
+  main.replaceChildren(...diamondCards);
+});
+
+clubButton.addEventListener("click", () => {
+  filteredDeck = currentDeck.filter((card) => {
+    return card.cardSuit.includes("C");
+  });
+  const clubCards = filteredDeck.map(createDeckDivs);
+  main.replaceChildren(...clubCards);
+});
