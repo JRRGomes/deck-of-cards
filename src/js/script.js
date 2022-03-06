@@ -21,6 +21,7 @@ const spadeButton = document.getElementById("spade");
 const diamondButton = document.getElementById("diamond");
 const clubButton = document.getElementById("club");
 const resetButton = document.getElementById("reset");
+const shuffleButton = document.getElementById("shuffle");
 
 function createDeck() {
   SUITS.forEach((suit) => {
@@ -86,4 +87,10 @@ resetButton.addEventListener("click", () => {
   currentDeck = [...initialDeck];
   const resetDeck = currentDeck.map(createDeckDivs);
   main.replaceChildren(...resetDeck);
+});
+
+shuffleButton.addEventListener("click", () => {
+  const shuffleDeck = currentDeck.sort(() => 0.5 - Math.random());
+  const shuffledDeck = shuffleDeck.map(createDeckDivs);
+  main.replaceChildren(...shuffledDeck);
 });
